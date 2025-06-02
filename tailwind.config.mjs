@@ -4,6 +4,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
         "bebas-neue": [
           "Bebas Neue",
           "Impact",

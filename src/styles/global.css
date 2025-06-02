@@ -5,13 +5,14 @@
 /* Font loading optimization for mobile */
 @layer base {
   html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, sans-serif;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, sans-serif;
   }
 
+  /* Bebas Neue apenas para elementos específicos */
   .font-bebas-neue,
   .font-bebas {
-    font-family: "Bebas Neue", Impact, "Arial Black", Helvetica, sans-serif;
+    font-family: "Bebas Neue", Impact, "Arial Black", Helvetica, sans-serif !important;
     font-display: swap;
   }
 }
