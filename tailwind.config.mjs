@@ -4,7 +4,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "bebas-neue": ["Bebas Neue", "cursive"],
+        "bebas-neue": [
+          "Bebas Neue",
+          "Impact",
+          "Arial Black",
+          "Helvetica",
+          "sans-serif",
+        ],
+        bebas: [
+          "Bebas Neue",
+          "Impact",
+          "Arial Black",
+          "Helvetica",
+          "sans-serif",
+        ],
       },
       colors: {
         gold: "#b9963d",
