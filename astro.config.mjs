@@ -1,18 +1,29 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
 import react from "@astrojs/react";
-
-import tailwindcss from "@tailwindcss/vite";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [react(), tailwind()],
+
+  output: "static",
 
   devToolbar: {
     enabled: false,
   },
+
+  build: {
+    inlineStylesheets: "auto",
+  },
+
   vite: {
-    plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: "assets/[name].[hash][extname]",
+        },
+      },
+    },
   },
 });
