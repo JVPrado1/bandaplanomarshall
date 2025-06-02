@@ -1,0 +1,39 @@
+---
+// Biografia.astro - Seção de Biografia da banda Plano Marshall
+import { Image } from 'astro:assets';
+---
+
+<section id="biografia" class="py-20 bg-[#2e2e2e] flex flex-col items-center justify-center">
+  <div class="container px-4 md:px-6">
+    <h2 class="text-3xl md:text-4xl font-bebas mb-12 text-[#b9963d] uppercase tracking-wider text-center font-bebas-neue">
+      Biografia
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-3xl font-bebas text-[#b9963d] uppercase mb-6 tracking-wider font-bebas-neue ">Sobre nós</h3>
+        <div class="space-y-4 text-[#e0e0e0]">
+          <p>
+            Somos uma banda de rock formada em Jaú, interior de São Paulo. 
+          </p>
+          <p>
+            Nosso repertório é uma viagem pela história do rock, dos anos 80 até os dias atuais, apresentando clássicos das bandas que nos inspiraram e moldaram como músicos. De Guns N' Roses a Foo Fighters, de Pearl Jam a Ghost, trazemos toda a energia do rock para os palcos.
+          </p>
+          <p>
+            Com visual e performance cheia de energia, nossa missão é proporcionar uma experiência musical única, onde o público possa reviver os grandes momentos do rock, conhecer novas músicas e criar memórias inesquecíveis.
+          </p>
+        </div>
+      </div>
+      <div class="aspect-video relative">
+        <img
+          src="/banda2.jpeg"
+          alt="Plano Marshall Band"
+          width="640"
+          height="360"
+          class="rounded-md w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

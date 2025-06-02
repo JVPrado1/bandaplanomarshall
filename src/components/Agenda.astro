@@ -1,0 +1,115 @@
+---
+// Agenda.astro - Seção de Agenda de Shows da banda Plano Marshall
+---
+
+<section id="agenda" class="py-20 bg-[#2e2e2e] flex flex-col items-center justify-center">
+  <div class="container px-4 md:px-6">
+    <h2 class="text-3xl md:text-4xl font-bebas mb-12 text-[#b9963d] uppercase tracking-wider text-center font-bebas-neue">
+      Próximos Shows
+    </h2>
+
+    <div class="space-y-6 hidden ">
+      <!-- Show 1 -->
+      <article class="bg-black p-6 rounded-md flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-l-4 hover:border-[#b9963d] transition-all duration-300">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-center md:text-left">
+          <div class="text-center">
+            <time class="text-[#b9963d] text-xl font-bebas" datetime="2024-06-25">25</time>
+            <p class="text-[#e0e0e0]">JUN</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bebas text-[#b9963d] tracking-wider uppercase">Rock in Rio</h3>
+            <p class="text-[#e0e0e0]">Cidade do Rock - Rio de Janeiro, RJ</p>
+            <p class="text-[#e0e0e0] text-sm mt-1">20:00</p>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <a 
+            href="#ingressos" 
+            class="bg-[#b9963d] hover:bg-[#caa342] text-black font-bold px-6 py-3 rounded transition-colors inline-block text-center"
+          >
+            INGRESSOS
+          </a>
+        </div>
+      </article>
+
+      <!-- Show 2 -->
+      <article class="bg-black p-6 rounded-md flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-l-4 hover:border-[#b9963d] transition-all duration-300">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-center md:text-left">
+          <div class="text-center">
+            <time class="text-[#b9963d] text-xl font-bebas" datetime="2024-07-15">15</time>
+            <p class="text-[#e0e0e0]">JUL</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bebas text-[#b9963d] tracking-wider uppercase">Festival de Inverno</h3>
+            <p class="text-[#e0e0e0]">Espaço das Américas - São Paulo, SP</p>
+            <p class="text-[#e0e0e0] text-sm mt-1">19:30</p>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <a 
+            href="#ingressos" 
+            class="bg-[#b9963d] hover:bg-[#caa342] text-black font-bold px-6 py-3 rounded transition-colors inline-block text-center"
+          >
+            INGRESSOS
+          </a>
+        </div>
+      </article>
+
+      <!-- Show 3 -->
+      <article class="bg-black p-6 rounded-md flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-l-4 hover:border-[#b9963d] transition-all duration-300">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-center md:text-left">
+          <div class="text-center">
+            <time class="text-[#b9963d] text-xl font-bebas" datetime="2024-08-20">20</time>
+            <p class="text-[#e0e0e0]">AGO</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bebas text-[#b9963d] tracking-wider uppercase">Show Acústico</h3>
+            <p class="text-[#e0e0e0]">Teatro Municipal - Jaú, SP</p>
+            <p class="text-[#e0e0e0] text-sm mt-1">21:00</p>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <a 
+            href="#ingressos" 
+            class="bg-[#b9963d] hover:bg-[#caa342] text-black font-bold px-6 py-3 rounded transition-colors inline-block text-center"
+          >
+            INGRESSOS
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Mensagem de Em Breve -->
+    <div class="text-center py-16">
+      <div class="bg-black/50 rounded-lg p-8 max-w-md mx-auto border-2 border-dashed border-[#b9963d]/30">
+        <svg class="w-16 h-16 text-[#b9963d] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <h3 class="text-2xl font-bebas-neue text-[#b9963d] uppercase tracking-wider mb-2">
+          Em Breve
+        </h3>
+        <p class="text-[#e0e0e0] mb-4">
+          Estamos preparando shows incríveis para vocês!
+        </p>
+        <p class="text-[#e0e0e0] text-sm">
+          Acompanhem nossas redes sociais para novidades
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center ">
+      <a 
+        href="#todos-shows" 
+        class="border border-[#b9963d] text-[#b9963d] hover:bg-[#b9963d]/10 px-6 py-3 rounded transition-colors inline-flex items-center font-medium bg-black"
+      >
+        VER AGENDA COMPLETA
+        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
