@@ -4,6 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 		
+		<!-- URL Canônica -->
+		<link rel="canonical" href="https://bandaplanomarshall.com/" />
+		
+		<!-- PWA Manifest -->
+		<link rel="manifest" href="/manifest.json" />
+		
 		<!-- Critical resource preloads -->
 		<link rel="preload" href="/banda.webp" as="image" />
 		<link rel="preload" href="/logo-banda.webp" as="image" />
@@ -17,12 +23,26 @@
 		<!-- DNS prefetch for external resources -->
 		<link rel="dns-prefetch" href="//fonts.googleapis.com">
 		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="dns-prefetch" href="//www.youtube.com">
+		<link rel="dns-prefetch" href="//open.spotify.com">
+		<link rel="dns-prefetch" href="//www.instagram.com">
 		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="/src/styles/global.css" />
 		
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Plano Marshall - Banda de Rock de Jaú, SP. Os clássicos do rock nunca morrem." />
+		
+		<!-- SEO Meta Tags Otimizadas -->
+		<meta name="description" content="Plano Marshall - Banda de Rock de Jaú, SP. Shows ao vivo, covers dos clássicos do rock que nunca morrem. Contrate para eventos, festas e shows em Jaú e região do interior paulista." />
+		<meta name="keywords" content="banda rock Jaú, show banda Jaú, música rock São Paulo, banda para festa, cover rock clássico, Plano Marshall, banda interior paulista, show rock Jaú SP, evento musical, contratação banda rock" />
+		<meta name="author" content="Plano Marshall" />
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		
+		<!-- Geo/Local SEO -->
+		<meta name="geo.region" content="BR-SP" />
+		<meta name="geo.placename" content="Jaú" />
+		<meta name="geo.position" content="-22.2966;-48.5579" />
+		<meta name="ICBM" content="-22.2966, -48.5579" />
 		
 		<!-- Enhanced mobile optimization -->
 		<meta name="theme-color" content="#b9963d" />
@@ -30,34 +50,95 @@
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="Plano Marshall" />
 		
 		<!-- Enhanced SEO meta tags -->
-		<meta property="og:title" content="Plano Marshall - Rock Band" />
-		<meta property="og:description" content="Os clássicos do rock nunca morrem" />
-		<meta property="og:image" content="/banda.webp" />
+		<meta property="og:title" content="Plano Marshall - Banda de Rock | Jaú, SP" />
+		<meta property="og:description" content="Os clássicos do rock nunca morrem! Shows ao vivo em Jaú e região. Contrate para seus eventos." />
+		<meta property="og:image" content="https://bandaplanomarshall.com/banda.webp" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://bandaplanomarshall.com/" />
+		<meta property="og:site_name" content="Plano Marshall" />
 		<meta property="og:locale" content="pt_BR" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Plano Marshall - Rock Band" />
-		<meta name="twitter:description" content="Os clássicos do rock nunca morrem" />
-		<meta name="twitter:image" content="/banda.webp" />
 		
-		<!-- Schema.org structured data -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Plano Marshall - Banda de Rock | Jaú, SP" />
+		<meta name="twitter:description" content="Os clássicos do rock nunca morrem! Shows ao vivo em Jaú e região." />
+		<meta name="twitter:image" content="https://bandaplanomarshall.com/banda.webp" />
+		<meta name="twitter:image:alt" content="Plano Marshall - Banda de Rock de Jaú, SP" />
+		
+		<!-- Schema.org structured data aprimorado -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "MusicGroup",
 			"name": "Plano Marshall",
-			"description": "Banda de Rock de Jaú, SP",
-			"genre": "Rock",
+			"alternateName": "Banda Plano Marshall",
+			"description": "Banda de Rock de Jaú, SP especializada em covers dos clássicos do rock",
+			"genre": ["Rock", "Classic Rock", "Cover Band"],
 			"foundingLocation": {
 				"@type": "Place",
-				"name": "Jaú, SP, Brasil"
+				"name": "Jaú",
+				"addressRegion": "SP",
+				"addressCountry": "BR"
+			},
+			"homeLocation": {
+				"@type": "Place",
+				"name": "Jaú, São Paulo, Brasil"
+			},
+			"url": "https://bandaplanomarshall.com",
+			"sameAs": [
+				"https://instagram.com/bandaplanomarshall",
+				"https://youtube.com/@bandaplanomarshall",
+				"https://open.spotify.com/user/31pikezmjcsr3cdqpq7g4pp53oi4"
+			],
+			"image": "https://bandaplanomarshall.com/banda.webp",
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+55-14-99729-5849",
+				"contactType": "booking",
+				"availableLanguage": "Portuguese"
+			},
+			"offers": {
+				"@type": "Offer",
+				"description": "Shows e apresentações musicais",
+				"category": "Entertainment"
 			}
 		}
 		</script>
 		
-		<title>Plano Marshall - Banda de Rock | Jaú, SP</title>
+		<!-- Structured Data para Local Business -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Plano Marshall",
+			"description": "Banda de Rock para eventos e shows em Jaú e região",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Jaú",
+				"addressRegion": "SP",
+				"addressCountry": "BR"
+			},
+			"telephone": "+55-14-99729-5849",
+			"url": "https://bandaplanomarshall.com",
+			"priceRange": "Consulte valores",
+			"servedCuisine": "Música Rock",
+			"serviceArea": {
+				"@type": "GeoCircle",
+				"geoMidpoint": {
+					"@type": "GeoCoordinates",
+					"latitude": -22.2966,
+					"longitude": -48.5579
+				},
+				"geoRadius": "100000"
+			}
+		}
+		</script>
+		
+		<title>Plano Marshall - Banda de Rock | Shows em Jaú, SP | Os Clássicos do Rock Nunca Morrem</title>
 	</head>
 	<body>
 		<slot />
