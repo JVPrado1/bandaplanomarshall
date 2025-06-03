@@ -2,7 +2,11 @@
 <html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		
+		<!-- Critical resource preloads -->
+		<link rel="preload" href="/banda.webp" as="image" />
+		<link rel="preload" href="/logo-banda.webp" as="image" />
 		
 		<!-- Preload critical fonts for better mobile performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,17 +14,50 @@
 		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" as="style">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap">
 		
+		<!-- DNS prefetch for external resources -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="/src/styles/global.css" />
 		
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Plano Marshall - Banda de Rock de Jaú/SP. Rockão pesadão!" />
+		<meta name="description" content="Plano Marshall - Banda de Rock de Jaú, SP. Os clássicos do rock nunca morrem." />
 		
-		<!-- Mobile optimization -->
+		<!-- Enhanced mobile optimization -->
 		<meta name="theme-color" content="#b9963d" />
 		<meta name="format-detection" content="telephone=no" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		
-		<title>Plano Marshall - Rock de Jaú/SP</title>
+		<!-- Enhanced SEO meta tags -->
+		<meta property="og:title" content="Plano Marshall - Rock Band" />
+		<meta property="og:description" content="Os clássicos do rock nunca morrem" />
+		<meta property="og:image" content="/banda.webp" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Plano Marshall - Rock Band" />
+		<meta name="twitter:description" content="Os clássicos do rock nunca morrem" />
+		<meta name="twitter:image" content="/banda.webp" />
+		
+		<!-- Schema.org structured data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "MusicGroup",
+			"name": "Plano Marshall",
+			"description": "Banda de Rock de Jaú, SP",
+			"genre": "Rock",
+			"foundingLocation": {
+				"@type": "Place",
+				"name": "Jaú, SP, Brasil"
+			}
+		}
+		</script>
+		
+		<title>Plano Marshall - Banda de Rock | Jaú, SP</title>
 	</head>
 	<body>
 		<slot />

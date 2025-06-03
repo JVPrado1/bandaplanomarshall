@@ -2,11 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font loading optimization for mobile */
+/* Performance optimizations */
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
       "Segoe UI", Roboto, sans-serif;
+    /* Smooth scrolling otimizado */
+    scroll-behavior: smooth;
+    /* Renderização de texto otimizada */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Critical loading optimizations */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    /* Lazy loading nativo */
+    loading: lazy;
+  }
+
+  /* Preload critical images */
+  img[data-critical] {
+    loading: eager;
   }
 
   /* Bebas Neue apenas para elementos específicos */
@@ -14,5 +38,43 @@
   .font-bebas {
     font-family: "Bebas Neue", Impact, "Arial Black", Helvetica, sans-serif !important;
     font-display: swap;
+  }
+
+  /* Reduzir repaint/reflow */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  /* Otimizações para animações */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Touch optimization para mobile */
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent layout shift */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
   }
 }
