@@ -18,7 +18,7 @@ export async function GET() {
     </image:image>
     
     <image:image>
-      <image:loc>https://bandaplanomarshall.com.br/logo-banda.webp</image:loc>
+      <image:loc>https://bandaplanomarshall.com.br/logo-banda.png</image:loc>
       <image:title>Logo Plano Marshall</image:title>
       <image:caption>Logo oficial da banda Plano Marshall</image:caption>
     </image:image>
