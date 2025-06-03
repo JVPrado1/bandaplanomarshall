@@ -2,84 +2,332 @@
 // Membros.astro - Seção de Integrantes da banda Plano Marshall
 ---
 
-<section id="integrantes" class="py-16 bg-black flex flex-col items-center justify-center font-bebas-neue\">
+<section id="integrantes" class="py-16 bg-black flex flex-col items-center justify-center font-bebas-neue">
   <div class="container px-4 md:px-6">
-    <h2 class="text-3xl md:text-4xl  font-bebas text-[#b9963d] uppercase mb-12 text-center tracking-wider">
+    <h2 class="text-3xl md:text-4xl font-bebas text-[#b9963d] uppercase mb-12 text-center tracking-wider">
       Integrantes
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Desktop/Tablet Grid -->
+    <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Vocalista -->
       <article class="text-center">
         <div class="aspect-square relative mb-4 overflow-hidden">
           <img
             src="/gui.webp"
-            alt="Guilherme Motta - Baixo"
+            alt="Guilherme Nunhez - Vocalista"
             width="300"
             height="300"
-            class="rounded-md object-cover w-full h-full object-[-10%_30%] scale-125 hover:scale-110 transition-transform duration-300"
+            class="rounded-md object-cover w-full h-full object-[-10%_30%] scale-100 hover:scale-110 transition-transform duration-300"
             loading="lazy"
           />
         </div>
-        <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider ">
+        <h3 class="text-xl md:text-2xl font-bebas text-[#b9963d] uppercase tracking-wider">
           Guilherme Nunhez
         </h3>
-        <p class="text-[#e0e0e0]">Vocalista</p>
-      </article>
-
-      <!-- Guitarrista -->
-      <article class="text-center">
-        <div class="aspect-square relative mb-4">
-          <img
-            src="/caue.webp"
-            alt="Cauê Magário - Guitarra"
-            width="300"
-            height="300"
-            class="rounded-md object-cover w-full h-full object-[10%_30%]"
-            loading="lazy"
-          />
-        </div>
-        <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider">
-          Caue Barros
-        </h3>
-        <p class="text-[#e0e0e0]">Baterista</p>
-      </article>
-
-      <!-- Baixista -->
-      <article class="text-center">
-        <div class="aspect-square relative mb-4">
-          <img
-            src="/prado.webp"
-            alt="João Victor Prado - Vocal"
-            width="300"
-            height="300"
-            class="rounded-md object-cover w-full h-full object-[100%_30%]"
-            loading="lazy"
-          />
-        </div>
-        <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider">
-          João Prado
-        </h3>
-        <p class="text-[#e0e0e0]">Guitarrista</p>
+        <p class="text-[#e0e0e0] mb-1 text-lg">Vocal</p>
+        <a 
+          href="https://instagram.com/gui.nunhez" 
+          target="_blank"
+          class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+          aria-label="Instagram do Guilherme"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @gui.nunhez
+        </a>
       </article>
 
       <!-- Baterista -->
       <article class="text-center">
-        <div class="aspect-square relative mb-4">
+        <div class="aspect-square relative mb-4 overflow-hidden">
           <img
-            src="/lucas.webp"
-            alt="Lucas Magário - Bateria"
+            src="/caue.webp"
+            alt="Caue Barros - Baterista"
             width="300"
             height="300"
-            class="rounded-md object-cover w-full h-full object-[100%_80%]"
+            class="rounded-md object-cover w-full h-full object-[10%_30%] scale-100 hover:scale-110 transition-transform duration-300"
             loading="lazy"
           />
         </div>
-        <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider ">
+        <h3 class="text-xl md:text-2xl font-bebas text-[#b9963d] uppercase tracking-wider">
+          Caue Barros
+        </h3>
+        <p class="text-[#e0e0e0] mb-1 text-lg">Bateria</p>
+        <a 
+          href="https://instagram.com/cauerbarros" 
+          target="_blank"
+          class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+          aria-label="Instagram do Caue"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @cauerbarros
+        </a>
+      </article>
+
+      <!-- Guitarrista -->
+      <article class="text-center">
+        <div class="aspect-square relative mb-4 overflow-hidden">
+          <img
+            src="/prado.webp"
+            alt="João Prado - Guitarrista"
+            width="300"
+            height="300"
+            class="rounded-md object-cover w-full h-full object-[100%_30%] scale-100 hover:scale-110 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl md:text-2xl font-bebas text-[#b9963d] uppercase tracking-wider">
+          João Prado
+        </h3>
+        <p class="text-[#e0e0e0] mb-1 text-lg">Guitarra</p>
+        <a 
+          href="https://instagram.com/jvprado" 
+          target="_blank"
+          class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+          aria-label="Instagram do João"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @jvprado
+        </a>
+      </article>
+
+      <!-- Baixista -->
+      <article class="text-center">
+        <div class="aspect-square relative mb-4 overflow-hidden">
+          <img
+            src="/lucas.webp"
+            alt="Lucas Sampaio - Baixista"
+            width="300"
+            height="300"
+            class="rounded-md object-cover w-full h-full object-[100%_80%] scale-100 hover:scale-110 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl md:text-2xl font-bebas text-[#b9963d] uppercase tracking-wider">
           Lucas Sampaio
         </h3>
-        <p class="text-[#e0e0e0]">Baixista</p>
+        <p class="text-[#e0e0e0] mb-1 text-lg">Baixo</p>
+        <a 
+          href="https://instagram.com/lucassampaion_" 
+          target="_blank"
+          class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+          aria-label="Instagram do Lucas"
+        >
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @lucassampaion_
+        </a>
       </article>
+    </div>
+
+    <!-- Mobile Carrossel -->
+    <div class="md:hidden relative">
+      <div class="overflow-hidden">
+        <div id="membros-carousel" class="flex transition-transform duration-300 ease-in-out">
+          <!-- Vocalista -->
+          <article class="min-w-full text-center px-8">
+            <div class="aspect-square relative mb-4 overflow-hidden max-w-xs mx-auto">
+              <img
+                src="/gui.webp"
+                alt="Guilherme Nunhez - Vocalista"
+                width="300"
+                height="300"
+                class="rounded-md object-cover w-full h-full object-[-10%_30%] scale-100"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider">
+              Guilherme Nunhez
+            </h3>
+            <p class="text-[#e0e0e0] text-lg mb-1">Vocalista</p>
+            <a 
+              href="https://instagram.com/gui.nunhez" 
+              target="_blank"
+              class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+              aria-label="Instagram do Guilherme"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              @gui.nunhez
+            </a>
+          </article>
+
+          <!-- Baterista -->
+          <article class="min-w-full text-center px-8">
+            <div class="aspect-square relative mb-4 overflow-hidden max-w-xs mx-auto">
+              <img
+                src="/caue.webp"
+                alt="Caue Barros - Baterista"
+                width="300"
+                height="300"
+                class="rounded-md object-cover w-full h-full object-[10%_30%] scale-100"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider">
+              Caue Barros
+            </h3>
+            <p class="text-[#e0e0e0] text-lg mb-1">Baterista</p>
+            <a 
+              href="https://instagram.com/cauerbarros" 
+              target="_blank"
+              class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+              aria-label="Instagram do Caue"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              @cauerbarros
+            </a>
+          </article>
+
+          <!-- Guitarrista -->
+          <article class="min-w-full text-center px-8">
+            <div class="aspect-square relative mb-4 overflow-hidden max-w-xs mx-auto">
+              <img
+                src="/prado.webp"
+                alt="João Prado - Guitarrista"
+                width="300"
+                height="300"
+                class="rounded-md object-cover w-full h-full object-[100%_30%] scale-100"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider">
+              João Prado
+            </h3>
+            <p class="text-[#e0e0e0] text-lg mb-1">Guitarrista</p>
+            <a 
+              href="https://instagram.com/jvprado" 
+              target="_blank"
+              class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors text-lg"
+              aria-label="Instagram do João"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              @jvprado
+            </a>
+          </article>
+
+          <!-- Baixista -->
+          <article class="min-w-full text-center px-8">
+            <div class="aspect-square relative mb-4 overflow-hidden max-w-xs mx-auto">
+              <img
+                src="/lucas.webp"
+                alt="Lucas Sampaio - Baixista"
+                width="300"
+                height="300"
+                class="rounded-md object-cover w-full h-full object-[100%_80%] scale-100"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-xl font-bebas text-[#b9963d] uppercase tracking-wider">
+              Lucas Sampaio
+            </h3>
+            <p class="text-[#e0e0e0] text-lg mb-1">Baixista</p>
+            <a 
+              href="https://instagram.com/lucassampaion_" 
+              target="_blank"
+              class="inline-flex items-center text-[#b9963d] hover:text-[#caa342] transition-colors"
+              aria-label="Instagram do Lucas"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              @lucassampaion_
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <!-- Indicadores (bolinhas) -->
+      <div class="flex justify-center space-x-2 mt-6">
+        <button class="carousel-dot w-3 h-3 rounded-full bg-[#b9963d] transition-opacity duration-200" data-slide="0"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-[#b9963d]/30 transition-opacity duration-200" data-slide="1"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-[#b9963d]/30 transition-opacity duration-200" data-slide="2"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-[#b9963d]/30 transition-opacity duration-200" data-slide="3"></button>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('membros-carousel');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    const totalSlides = 4;
+
+    if (!carousel || dots.length === 0) return;
+
+    // Função para ir para um slide específico
+    function goToSlide(slideIndex: number) {
+      if (!carousel) return;
+      
+      currentSlide = slideIndex;
+      const translateX = -slideIndex * 100;
+      carousel.style.transform = `translateX(${translateX}%)`;
+      
+      // Atualizar indicadores
+      dots.forEach((dot, index) => {
+        if (index === slideIndex) {
+          dot.classList.remove('bg-[#b9963d]/30');
+          dot.classList.add('bg-[#b9963d]');
+        } else {
+          dot.classList.remove('bg-[#b9963d]');
+          dot.classList.add('bg-[#b9963d]/30');
+        }
+      });
+    }
+
+    // Event listeners para os indicadores
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+      });
+    });
+
+    // Auto-play opcional (descomentado se quiser)
+    // setInterval(() => {
+    //   currentSlide = (currentSlide + 1) % totalSlides;
+    //   goToSlide(currentSlide);
+    // }, 4000);
+
+    // Suporte para swipe em touch
+    let startX = 0;
+    let isDragging = false;
+
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      
+      if (Math.abs(diffX) > 50) { // Mínimo de 50px para considerar swipe
+        if (diffX > 0 && currentSlide < totalSlides - 1) {
+          // Swipe para esquerda - próximo slide
+          goToSlide(currentSlide + 1);
+        } else if (diffX < 0 && currentSlide > 0) {
+          // Swipe para direita - slide anterior
+          goToSlide(currentSlide - 1);
+        }
+      }
+      
+      isDragging = false;
+    });
+  });
+</script>

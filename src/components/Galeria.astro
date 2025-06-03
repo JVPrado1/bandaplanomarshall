@@ -2,31 +2,41 @@
 // Dados da galeria
 const galeriaItems = [
   {
+    id: 8,
+    tipo: 'video',
+    tipoVideo: 'local',
+    titulo: 'Aftermovie - Casarão 682',
+    descricao: '31/05/2025 - Jaú/SP',
+    thumbnail: '/banda.webp',
+    videoSrc: '/banda-video.mp4',
+    objectPosition: 'object-center',
+    url: '#'
+  },
+  {
     id: 1,
     tipo: 'foto',
     titulo: 'Casarão 682',
     descricao: '31/05/2025 - Jaú/SP',
-    imagem: '/galeria/fotos/casarao1.jpeg',
+    imagem: '/galeria/fotos/casarao1.webp',
+    objectPosition: 'object-center',
     url: '#'
   },
   {
     id: 2,
-    tipo: 'video',
-    tipoVideo: 'youtube',
-    titulo: 'Clipe - Segunda Música',
-    descricao: 'Lançado em 2023',
-    thumbnail: '/placeholder.svg?height=720&width=1280',
-    videoId: 'dQw4w9WgXcQ',
-    url: 'https://youtube.com/watch?v=dQw4w9WgXcQ'
+    tipo: 'foto',
+    titulo: 'Casarão 682',
+    descricao: '31/05/2025 - Jaú/SP', 
+    imagem: '/galeria/fotos/casarao2.webp',
+    objectPosition: 'object-center',
+    url: '#'
   },
   {
     id: 3,
-    tipo: 'video',
-    tipoVideo: 'local', // Vídeo pequeno/teaser
-    titulo: 'Behind the Scenes',
-    descricao: 'Bastidores da gravação',
-    thumbnail: '/placeholder.svg?height=720&width=1280',
-    videoSrc: '/videos/behind-scenes.mp4', // Vídeo local
+    tipo: 'foto',
+    titulo: 'Casarão 682',
+    descricao: '31/05/2025 - Jaú/SP',
+    imagem: '/galeria/fotos/casarao3.webp',
+    objectPosition: 'object-center',
     url: '#'
   },
   {
@@ -34,41 +44,35 @@ const galeriaItems = [
     tipo: 'foto',
     titulo: 'Casarão 682',
     descricao: '31/05/2025 - Jaú/SP',
-    imagem: '/galeria/fotos/casarao2.jpeg',
+    imagem: '/galeria/fotos/casarao4.webp',
+    objectPosition: 'object-center',
     url: '#'
   },
   {
     id: 5,
     tipo: 'foto',
-    titulo: 'Ensaio da Banda',
-    descricao: 'Bastidores do último álbum',
-    imagem: '/placeholder.svg?height=720&width=1280',
+    titulo: 'Casarão 682',
+    descricao: '31/05/2025 - Jaú/SP',
+    imagem: '/galeria/fotos/casarao5.webp',
+    objectPosition: 'object-[100%_30%]',
     url: '#'
   },
   {
     id: 6,
     tipo: 'foto',
-    titulo: 'Festival de Verão',
-    descricao: 'Apresentação ao vivo 2024',
-    imagem: '/placeholder.svg?height=720&width=1280',
+    titulo: 'Casarão 682',
+    descricao: '31/05/2025 - Jaú/SP',
+    imagem: '/galeria/fotos/casarao6.webp',
+    objectPosition: 'object-center',
     url: '#'
   },
   {
     id: 7,
-    tipo: 'video',
-    tipoVideo: 'cloudinary', // Para vídeos médios
-    titulo: 'Ensaio Acústico',
-    descricao: 'Versão intimista',
-    thumbnail: '/placeholder.svg?height=720&width=1280',
-    videoSrc: 'https://res.cloudinary.com/demo/video/upload/v1234567890/sample.mp4',
-    url: '#'
-  },
-  {
-    id: 8,
     tipo: 'foto',
-    titulo: 'Gravação em Estúdio',
-    descricao: 'Processo criativo',
-    imagem: '/placeholder.svg?height=720&width=1280',
+    titulo: 'Casarão 682',
+    descricao: '31/05/2025 - Jaú/SP',
+    imagem: '/galeria/fotos/casarao7.webp',
+    objectPosition: 'object-center',
     url: '#'
   }
 ];
@@ -111,6 +115,11 @@ const galeriaItems = [
         <div 
           class={`galeria-item group cursor-pointer transition-all duration-300 ${item.tipo}`}
           data-tipo={item.tipo}
+          data-tipo-video={item.tipoVideo || ''}
+          data-video-src={item.videoSrc || ''}
+          data-video-id={'videoId' in item ? item.videoId || '' : ''}
+          data-titulo={item.titulo}
+          data-descricao={item.descricao}
         >
           <div class="aspect-video relative mb-4 overflow-hidden rounded-md bg-gray-900">
             <!-- Overlay de interação -->
@@ -131,9 +140,20 @@ const galeriaItems = [
             <img
               src={item.thumbnail || item.imagem}
               alt={item.titulo}
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              class={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ${item.objectPosition || 'object-center'}`}
               loading="lazy"
             />
+            
+            <!-- Ícone de Play para Vídeos (sempre visível) -->
+            {item.tipo === 'video' && (
+              <div class="absolute inset-0 flex items-center justify-center z-15 pointer-events-none">
+                <div class="bg-black/70 rounded-full p-4 border-2 border-[#b9963d] shadow-lg">
+                  <svg class="h-8 w-8 text-[#b9963d] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            )}
             
             <!-- Badge do tipo -->
             <div class="absolute top-3 left-3 z-20">
@@ -162,17 +182,15 @@ const galeriaItems = [
 
     <!-- Botão Ver Mais -->
     <div class="mt-12 text-center">
-      <a 
-        href="https://youtube.com/@planomarshalll" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#b9963d] text-[#b9963d] hover:bg-[#b9963d] hover:text-black font-bebas uppercase tracking-wider transition-all duration-300 rounded-md group"
+      <button 
+        id="ver-galeria-btn"
+        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#b9963d] text-[#b9963d] hover:bg-[#b9963d] hover:text-black font-bebas uppercase tracking-wider transition-all duration-300 rounded-md group cursor-pointer"
       >
         Ver galeria completa
         <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
         </svg>
-      </a>
+      </button>
     </div>
   </div>
 </section>
@@ -229,6 +247,7 @@ const galeriaItems = [
     const modal = document.getElementById('modal');
     const modalContent = document.getElementById('modal-content');
     const modalClose = document.getElementById('modal-close');
+    const verGaleriaBtn = document.getElementById('ver-galeria-btn');
     
     // Verificar se os elementos existem
     if (!modal || !modalContent || !modalClose) return;
@@ -260,23 +279,35 @@ const galeriaItems = [
     galeriaItems.forEach(item => {
       item.addEventListener('click', () => {
         const tipo = item.getAttribute('data-tipo');
-        const tituloElement = item.querySelector('h3');
-        const descricaoElement = item.querySelector('p');
+        const tipoVideo = item.getAttribute('data-tipo-video');
+        const videoSrc = item.getAttribute('data-video-src');
+        const videoId = item.getAttribute('data-video-id');
+        const titulo = item.getAttribute('data-titulo') || '';
+        const descricao = item.getAttribute('data-descricao') || '';
         const imagemElement = item.querySelector('img');
+        const imagem = imagemElement?.src || '';
         
-        if (!tituloElement || !descricaoElement || !imagemElement || !tipo) return;
-        
-        const titulo = tituloElement.textContent || '';
-        const descricao = descricaoElement.textContent || '';
-        const imagem = imagemElement.src || '';
+        if (!tipo) return;
         
         let content = '';
         
         if (tipo === 'video') {
-          // Identificar o tipo de vídeo pelo título
-          if (titulo.includes('Canção Principal') || titulo.includes('Segunda Música')) {
+          if (tipoVideo === 'local' && videoSrc) {
+            // Vídeo local
+            content = `
+              <div class="aspect-video">
+                <video controls class="w-full h-full rounded-lg" autoplay>
+                  <source src="${videoSrc}" type="video/mp4">
+                  Seu navegador não suporta vídeo HTML5.
+                </video>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bebas text-[#b9963d] uppercase">${titulo}</h3>
+                <p class="text-gray-300 text-sm">${descricao}</p>
+              </div>
+            `;
+          } else if (tipoVideo === 'youtube' && videoId) {
             // YouTube
-            const videoId = titulo.includes('Canção Principal') ? 'dQw4w9WgXcQ' : 'dQw4w9WgXcQ';
             content = `
               <div class="aspect-video">
                 <iframe 
@@ -291,26 +322,12 @@ const galeriaItems = [
                 <p class="text-gray-300 text-sm">${descricao}</p>
               </div>
             `;
-          } else if (titulo.includes('Behind the Scenes')) {
-            // Vídeo local
+          } else if (tipoVideo === 'cloudinary' && videoSrc) {
+            // Cloudinary ou outros vídeos externos
             content = `
               <div class="aspect-video">
                 <video controls class="w-full h-full rounded-lg" autoplay>
-                  <source src="/videos/behind-scenes.mp4" type="video/mp4">
-                  Seu navegador não suporta vídeo HTML5.
-                </video>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bebas text-[#b9963d] uppercase">${titulo}</h3>
-                <p class="text-gray-300 text-sm">${descricao}</p>
-              </div>
-            `;
-          } else if (titulo.includes('Ensaio Acústico')) {
-            // Cloudinary
-            content = `
-              <div class="aspect-video">
-                <video controls class="w-full h-full rounded-lg" autoplay>
-                  <source src="https://res.cloudinary.com/demo/video/upload/v1234567890/sample.mp4" type="video/mp4">
+                  <source src="${videoSrc}" type="video/mp4">
                   Seu navegador não suporta vídeo HTML5.
                 </video>
               </div>
@@ -320,7 +337,7 @@ const galeriaItems = [
               </div>
             `;
           } else {
-            // Fallback para outros vídeos
+            // Fallback para vídeos sem configuração adequada
             content = `
               <div class="aspect-video bg-gray-800 flex items-center justify-center">
                 <div class="text-center text-gray-400">
@@ -329,12 +346,13 @@ const galeriaItems = [
                   </svg>
                   <p class="text-lg font-bebas uppercase">Vídeo: ${titulo}</p>
                   <p class="text-sm mt-2">${descricao}</p>
-                  <p class="text-xs mt-4 opacity-60">Clique para assistir no YouTube</p>
+                  <p class="text-xs mt-4 opacity-60">Vídeo não disponível</p>
                 </div>
               </div>
             `;
           }
         } else {
+          // Foto
           content = `
             <div class="relative">
               <img src="${imagem}" alt="${titulo}" class="w-full h-auto rounded-lg">
@@ -362,7 +380,18 @@ const galeriaItems = [
     });
     
     function closeModal() {
-      if (!modal) return;
+      if (!modal || !modalContent) return;
+      
+      // Parar qualquer vídeo que esteja tocando
+      const videos = modalContent.querySelectorAll('video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+      
+      // Limpar o conteúdo do modal para remover iframes do YouTube
+      modalContent.innerHTML = '';
+      
       modal.classList.add('hidden');
       modal.classList.remove('flex');
       document.body.style.overflow = 'auto';
@@ -374,5 +403,12 @@ const galeriaItems = [
         closeModal();
       }
     });
+
+    // Botão "Ver galeria completa"
+    if (verGaleriaBtn) {
+      verGaleriaBtn.addEventListener('click', () => {
+        alert('A galeria completa estará disponível em breve! =)');
+      });
+    }
   });
 </script>
