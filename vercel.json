@@ -14,7 +14,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|ico|png|jpg|jpeg|webp|svg|woff2))$",
+      "source": "/(.*\\.(js|css|ico|png|jpg|jpeg|webp|svg|woff2))",
       "headers": [
         {
           "key": "Cache-Control",
@@ -69,16 +69,6 @@
           "value": "public, max-age=0, must-revalidate"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
     }
   ]
 }
