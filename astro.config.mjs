@@ -18,7 +18,7 @@ export default defineConfig({
     assets: "assets",
   },
 
-  site: "https://bandaplanomarshall.com",
+  site: "https://bandaplanomarshall.com.br",
   base: "/",
   trailingSlash: "never",
 
