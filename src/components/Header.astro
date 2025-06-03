@@ -1,8 +1,9 @@
 <header id="header" class="fixed w-full z-50 py-4 transition-all duration-300 flex items-center justify-center">
   <nav class="container mx-auto px-4 font-bebas-neue">
     <div class="flex items-center justify-between">
-      <div class="text-[#b9963d] font-bold text-xl">
-        <img src="/logo-banda.png" alt="Plano Marshall" class="h-12 w-auto" />		
+      <!-- Logo - escondida no mobile quando no hero -->
+      <div id="header-logo" class="text-[#b9963d] font-bold text-xl transition-all duration-300 md:opacity-100 md:scale-100">
+        <img src="/logo-banda.webp" alt="Plano Marshall" class="h-12 w-auto" />		
       </div>
       
       <!-- Menu Desktop -->
@@ -71,6 +72,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header') as HTMLElement | null;
+    const headerLogo = document.getElementById('header-logo') as HTMLElement | null;
     const mobileMenuBtn = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
     const mobileMenu = document.getElementById('mobile-menu') as HTMLElement | null;
     const hamburgerIcon = document.getElementById('hamburger-icon') as HTMLElement | null;
@@ -165,9 +167,18 @@
       }
     });
     
-    // Header scroll background
-    if (header) {
+    // Função para detectar se é mobile
+    function isMobile() {
+      return window.innerWidth < 768; // Breakpoint md do Tailwind
+    }
+    
+    // Header scroll background e logo mobile
+    if (header && headerLogo) {
       function handleScroll() {
+        const heroSection = document.getElementById('home');
+        const biografiaSection = document.getElementById('biografia');
+        
+        // Background do header
         if (window.scrollY > 100) {
           if (header) {
             header.classList.add('bg-black/90', 'backdrop-blur-md', 'shadow-lg');
@@ -179,10 +190,34 @@
             header.classList.add('bg-opacity-50');
           }
         }
+        
+        // Logo mobile - só aparece após sair do hero
+        if (isMobile() && headerLogo) {
+          if (heroSection && biografiaSection) {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const scrollPosition = window.scrollY + 100; // Offset para aparecer um pouco antes
+            
+            if (scrollPosition > heroBottom) {
+              // Mostrar logo quando sair do hero
+              headerLogo.classList.remove('opacity-0', 'scale-75', 'pointer-events-none');
+              headerLogo.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+            } else {
+              // Esconder logo quando no hero
+              headerLogo.classList.add('opacity-0', 'scale-75', 'pointer-events-none');
+              headerLogo.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+            }
+          }
+        } else if (headerLogo) {
+          // No desktop, logo sempre visível
+          headerLogo.classList.remove('opacity-0', 'scale-75', 'pointer-events-none');
+          headerLogo.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+        }
       }
 
+      // Inicializar estado correto
       handleScroll();
       window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll); // Recalcular em mudança de tela
     }
   });
 </script>
