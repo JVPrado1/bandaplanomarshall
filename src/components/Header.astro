@@ -1,5 +1,5 @@
 <header id="header" class="fixed w-full z-50 py-4 transition-all duration-300 flex items-center justify-center">
-  <nav class="container mx-auto px-4 font-bebas-neue">
+  <nav class="container mx-auto px-8 font-bebas-neue">
     <div class="flex items-center justify-between">
       <!-- Logo - escondida no mobile quando no hero -->
       <div id="header-logo" class="text-[#b9963d] font-bold text-xl transition-all duration-300 md:opacity-100 md:scale-100 opacity-0 scale-75 pointer-events-none md:pointer-events-auto">
@@ -175,7 +175,7 @@
     // Header scroll background e logo mobile
     if (header && headerLogo) {
       function handleScroll() {
-        const scrolled = window.scrollY > 100;
+        const scrolled = window.scrollY > 300; // Aumentado de 100 para 300px
         
         // Background do header
         if (scrolled) {
