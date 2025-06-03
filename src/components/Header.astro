@@ -2,7 +2,7 @@
   <nav class="container mx-auto px-4 font-bebas-neue">
     <div class="flex items-center justify-between">
       <!-- Logo - escondida no mobile quando no hero -->
-      <div id="header-logo" class="text-[#b9963d] font-bold text-xl transition-all duration-300 md:opacity-100 md:scale-100">
+      <div id="header-logo" class="text-[#b9963d] font-bold text-xl transition-all duration-300 md:opacity-100 md:scale-100 opacity-0 scale-75 pointer-events-none md:pointer-events-auto">
         <img src="/logo-banda.png" alt="Plano Marshall" class="h-12 w-auto" />		
       </div>
       
@@ -175,11 +175,10 @@
     // Header scroll background e logo mobile
     if (header && headerLogo) {
       function handleScroll() {
-        const heroSection = document.getElementById('home');
-        const biografiaSection = document.getElementById('biografia');
+        const scrolled = window.scrollY > 100;
         
         // Background do header
-        if (window.scrollY > 100) {
+        if (scrolled) {
           if (header) {
             header.classList.add('bg-black/90', 'backdrop-blur-md', 'shadow-lg');
             header.classList.remove('bg-opacity-50');
@@ -191,21 +190,16 @@
           }
         }
         
-        // Logo mobile - só aparece após sair do hero
+        // Logo mobile - aparece junto com o background
         if (isMobile() && headerLogo) {
-          if (heroSection && biografiaSection) {
-            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-            const scrollPosition = window.scrollY + 100; // Offset para aparecer um pouco antes
-            
-            if (scrollPosition > heroBottom) {
-              // Mostrar logo quando sair do hero
-              headerLogo.classList.remove('opacity-0', 'scale-75', 'pointer-events-none');
-              headerLogo.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
-            } else {
-              // Esconder logo quando no hero
-              headerLogo.classList.add('opacity-0', 'scale-75', 'pointer-events-none');
-              headerLogo.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
-            }
+          if (scrolled) {
+            // Mostrar logo quando aparece o background
+            headerLogo.classList.remove('opacity-0', 'scale-75', 'pointer-events-none');
+            headerLogo.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+          } else {
+            // Esconder logo quando não há background
+            headerLogo.classList.add('opacity-0', 'scale-75', 'pointer-events-none');
+            headerLogo.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
           }
         } else if (headerLogo) {
           // No desktop, logo sempre visível
